@@ -1,16 +1,16 @@
 node {
     stage ("Checkout DataService"){
-        git branch: 'main', url: ' https://github.com/foxwas/bahmsdfox-msdataservice.git'
+        git branch: 'main', url: 'https://github.com/foxwas/sept26-bah-mcc-data.git'
     }
     
     stage ("Gradle Build - DataService") {
 	
-        bat 'gradle clean build'
+        sh 'gradle clean build'
 
     }
     
     stage ("Gradle Bootjar-Package - DataService") {
-        bat 'gradle bootjar'
+        sh 'gradle bootjar'
     }
     
     stage('User Acceptance Test - DataService') {
@@ -22,8 +22,8 @@ node {
 	  if(response=="Yes") {
 
 	    stage('Release- DataService') {
-	     bat 'gradle build -x test'
-	     bat 'echo DataService is ready to release!'
+	     sh 'gradle build -x test'
+	     sh 'echo DataService is ready to release!'
 
 	    }
 	  }
