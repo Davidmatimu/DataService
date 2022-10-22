@@ -9,7 +9,7 @@ node {
 
     }
     
-    stage ("Gradle Bootjar-Package - DataService") {
+    stage ("Gradle BootJar-Package - DataService") {
         sh 'gradle bootJar'
     }
     
