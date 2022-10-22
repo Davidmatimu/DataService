@@ -10,7 +10,7 @@ node {
     }
     
     stage ("Gradle Bootjar-Package - DataService") {
-        sh 'gradle bootjar'
+        sh 'gradle bootJar'
     }
     
     stage('User Acceptance Test - DataService') {
